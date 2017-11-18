@@ -1,0 +1,68 @@
+<div class="banner">
+    <div id="TitleBar">
+
+        <a href="./">
+            <i class="fa fa-comments-o fa-3x" style="height: 35px; float: left; color: Orange"></i>
+
+
+            <div style="float: left; margin-left: 5px; line-height: 1.2">
+                <i style="color: steelblue; font-size: 0.8em; font-weight: bold;">West Wind Technologies</i><br />
+                <i style="color: whitesmoke; font-size: 1.25em; font-weight: bold;">
+                    SignalR ChatClient
+                </i>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div id="Page" style="margin: 50px 0;">
+  <div class="page-header">
+    Chat Messages
+  </div>
+
+  <div class="responsive-container" style="padding: 8px;">
+    <div>
+      <select [(ngModel)]="user.Group" (change)="joinGroup()" style="width: 300px;" 
+              class="form-control-small">
+        <option *ngFor="let grp of groups" [value]="grp">
+          {{grp}}
+        </option>
+      </select>
+      <button class="btn btn-default" (click)="clearMessages()">Clear</button>
+    </div>
+    <div class="right">
+      Your name:
+      <input type="text"  [(ngModel)]="user.Name"  
+            (change)="joinGroup()" onchange="" style="width: 230px;"
+            class="form-control-small" />
+    </div>
+  </div>
+
+
+  <div id="ChatMessages">
+    <div class='message-item' *ngFor="let msg of messages" >
+      <div class='message-item-time'>{{msg.Time | date:"MMM dd, HH:mm:ss"}}</div>
+      <div class='message-item-name'>{{msg.User.Name}}</div>
+      <div [ngClass]="{ 'message-detail-activeuser': msg.IsCurrentUser }"
+        [innerHTML]="msg.Message"></div>
+    </div>
+  </div>
+  <div id="MessageArea" style="display:flex">
+    <div style="flex: 1 1 auto;margin-right: 20px;">
+      <textarea placeholder="write your message text" style="height: 100px; width: 100%;font-family: consolas, menlo, monospace;"
+        [(ngModel)]="message"></textarea>
+      <div class="connection-status"
+           [ngClass]="{'warning': service.signalrConnectionStatus != 'Connected'}">
+        <i class="fa fa-podcast" ></i> 
+        {{service.signalrConnectionStatus}}
+      </div>      
+    </div>
+    <div style="flex: 0 0 auto;">
+      <button (click)="sendMessage(message,group)" accesskey="S" class="btn btn-lg btn-primary" style="margin: 15px 10px 0 0">
+        <i class="fa fa-external-link"></i>
+        Send
+      </button>
+    </div>
+  </div>
+
+</div>

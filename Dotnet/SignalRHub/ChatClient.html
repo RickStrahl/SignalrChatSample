@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Signal R Chat Client</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Localization Administration Form">
+
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+    <link href="css/font-awesome/css/font-awesome.min.css"
+          rel="stylesheet" />
+
+    <link href="css/application.css" rel="stylesheet" />
+    <link href="ChatMessages.css" rel="stylesheet" />
+    <style>
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="banner">
+        <div id="TitleBar">
+
+            <a href="./">
+                <i class="fa fa-comments-o fa-3x" style="height: 35px; float: left; color: Orange"></i>
+
+
+                <div style="float: left; margin-left: 5px; line-height: 1.2">
+                    <i style="color: steelblue; font-size: 0.8em; font-weight: bold;">West Wind Technologies</i><br />
+                    <i style="color: whitesmoke; font-size: 1.25em; font-weight: bold;">
+                        SignalR ChatClient
+                    </i>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!--<nav class="menubar " style="background: #727272;">
+        <ul id="MenuButtons" class="nav navbar-nav pull-right navbar">
+            <li>
+                <a href="">
+                    <i class="fa fa-home"></i> @stringLocalizer["Home"]
+                </a>
+            </li>
+            <li>
+                <a href="LocalizationAdmin">
+                    <i class="fa fa-gears"></i> @stringLocalizer["ResourceEditor"]
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/RickStrahl/Westwind.Globalization">
+                    <i class="fa fa-github"></i> GitHub
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa fa-home"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </nav>-->
+
+    <div id="Page" style="margin: 20px 0;"> 
+        <div class="page-header">
+            Chat Messages
+        </div>
+        
+            
+        <div class="responsive-container" style="padding: 8px;">        
+            <div>
+                <select v-model="group" v-on:change="joinGroup()" style="width: 300px;" class="form-control-small"  >
+                    <option v-for="grp in groups" v-bind:value="grp">
+                        {{grp}}
+                    </option>
+                </select>
+                <button class="btn btn-default" v-on:click="clearMessages()">Clear</button>
+            </div>
+            <div  class="right">
+                Your name: 
+                <input type="text" v-model="name"  v-on:change="joinGroup()"
+                       onchange=""
+                       class="form-control-small"/>
+            </div>
+        </div>
+        
+        <div id="ChatMessages">
+            <div class='message-item' v-for="msg in messages" >
+                <div class='message-item-time'>{{new Date().formatDate("MMM dd, HH:mm:ss")}}</div>        
+                <div class='message-item-name'>{{msg.User.Name}}</div>                
+                <div v-bind:class="{ 'message-detail-activeuser': msg.IsActiveUser }" v-html="msg.Message"></div>
+            </div>
+        </div>
+        <div id="MessageArea" style="display:flex">
+            <div style="flex: 1 1 auto;margin-right: 20px;">
+                <textarea placeholder="write your message text" 
+                          style="height: 100px; width: 100%;font-family: consolas, menlo, monospace;"
+                          v-model="message" ></textarea>
+            </div>
+            <div style="flex: 300px 300px none;">
+                <button v-on:click="sendMessage(message,group)" accesskey="S"
+                        class="btn btn-lg btn-primary" style="margin: 15px 10px 0 0">
+                    <i class="fa fa-external-link"></i> 
+                    Send
+                </button>
+            </div>
+        </div>
+        
+        
+      
+    </div>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/ww.jquery.min.js"></script>
+    <script src="css/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.2.min.js" ></script>
+    <!--<script src="http://localhost/SignalRHub/signalr/hubs" ></script>-->
+    <script src="http://signalrswf.west-wind.com/signalr/hubs"></script>
+    
+    <script src="Scripts/vue.js"></script>    
+    <script src="scripts/marked.min.js"></script>    
+
+    <link href="scripts/highlightjs/styles/vs2015.css" rel="stylesheet" />
+    <script src="scripts/highlightjs/highlight.pack.js"></script>
+    <script src="ChatClient.js"></script>
+</body>
+</html>

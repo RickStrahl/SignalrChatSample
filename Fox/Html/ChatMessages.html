@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script type="text/javascript" 
+            src="https://getfirebug.com/firebug-lite.js#startOpened,overrideConsole">
+    </script> -->
+
+    <link href="./scripts/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./scripts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="ChatMessages.css">
+</head>
+<body>
+    <div id="Page">
+        <div class="page-header">
+            Chat Messages
+        </div>
+        <div id="ChatMessages">
+            <div class='message-item' v-for="msg in messages" >
+                <div class='message-item-time'>{{new Date().formatDate("MMM dd, HH:mm:ss")}}</div>        
+                <div class='message-item-name'>{{msg.name}}</div>                
+                <div v-bind:class="{ 'message-detail-activeuser': msg.isActiveUser }" v-html="msg.message"></div>
+            </div>
+
+        </div>
+    </div>
+    <script src="./scripts/jquery/dist/jquery.min.js"></script>
+    <script src="./scripts/vue.min.js"></script>    
+    <script src="./scripts/ww.jquery.min.js"></script>
+    <script src="./scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./scripts/marked.min.js"></script>
+    <script src="./scripts/ChatMessages.js"></script>
+    
+    <link href="./scripts/highlightjs/styles/vs2015.css" rel="stylesheet" />
+    <script src="./scripts/highlightjs/highlight.pack.js"></script>
+</body>
+</html>

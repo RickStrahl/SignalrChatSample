@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A0DDF0AA-D726-40BC-AD60-67FB695756B7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SignalRHub</RootNamespace>
+    <AssemblyName>SignalRHub</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.1.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Westwind.Utilities, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Westwind.Utilities.3.0.1\lib\net45\Westwind.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Westwind.Web, Version=2.75.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Westwind.Web.2.75\lib\net45\Westwind.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AngularClient\3rdpartylicenses.txt" />
+    <Content Include="AngularClient\favicon.ico" />
+    <Content Include="AngularClient\fontawesome-webfont.912ec66d7572ff821749.svg" />
+    <Content Include="AngularClient\glyphicons-halflings-regular.89889688147bd7575d63.svg" />
+    <Content Include="AngularClient\index.html" />
+    <Content Include="AngularClient\inline.d9d89c06a6c683be195a.bundle.js" />
+    <Content Include="AngularClient\main.3c8963d6f99947ea7b1e.bundle.js" />
+    <Content Include="AngularClient\polyfills.ad37cd45a71cb38eee76.bundle.js" />
+    <Content Include="AngularClient\scripts.b6c29932e28097b6c3e0.bundle.js" />
+    <Content Include="AngularClient\styles.70a3ec806b2d122436c6.bundle.css" />
+    <Content Include="ChatClient.html" />
+    <Content Include="ChatClient.js" />
+    <Content Include="ChatMessages.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\application.css" />
+    <Content Include="css\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap\dist\css\bootstrap.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\bootstrap\dist\css\bootstrap.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="css\bootstrap\dist\js\bootstrap.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\bootstrap\dist\js\bootstrap.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\bootstrap\dist\js\npm.js" />
+    <Content Include="css\bootstrap\package.js" />
+    <Content Include="css\font-awesome\css\font-awesome.css" />
+    <Content Include="css\font-awesome\css\font-awesome.min.css" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="packages.config" />
+    <Content Include="css\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="css\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap\dist\css\bootstrap.css.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\bootstrap\dist\css\bootstrap.min.css.map">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="css\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="css\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="css\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="css\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="css\bootstrap\package.json" />
+    <Content Include="css\bootstrap\README.md" />
+    <Content Include="css\font-awesome\css\font-awesome.css.map" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="css\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="css\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="AngularClient\fontawesome-webfont.674f50d287a8c48dc19b.eot" />
+    <Content Include="AngularClient\fontawesome-webfont.af7ae505a9eed503f8b8.woff2" />
+    <Content Include="AngularClient\fontawesome-webfont.b06871f281fee6b241d6.ttf" />
+    <Content Include="AngularClient\fontawesome-webfont.fee66e712a8a08eef580.woff" />
+    <Content Include="AngularClient\glyphicons-halflings-regular.448c34a56d699c29117a.woff2" />
+    <Content Include="AngularClient\glyphicons-halflings-regular.e18bbf611f2a2e43afc0.ttf" />
+    <Content Include="AngularClient\glyphicons-halflings-regular.f4769f9bdb7466be6508.eot" />
+    <Content Include="AngularClient\glyphicons-halflings-regular.fa2772327f55d8198301.woff" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Scripts\highlightjs\LICENSE" />
+    <Content Include="Scripts\highlightjs\highlight.pack.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\highlightjs\styles\brown-paper.css" />
+    <Content Include="Scripts\highlightjs\styles\brown-papersq.png" />
+    <Content Include="Scripts\highlightjs\styles\codepen-embed.css" />
+    <Content Include="Scripts\highlightjs\styles\color-brewer.css" />
+    <Content Include="Scripts\highlightjs\styles\darcula.css" />
+    <Content Include="Scripts\highlightjs\styles\dark.css" />
+    <Content Include="Scripts\highlightjs\styles\darkula.css" />
+    <Content Include="Scripts\highlightjs\styles\default.css" />
+    <Content Include="Scripts\highlightjs\styles\dracula.css" />
+    <Content Include="Scripts\highlightjs\styles\far.css" />
+    <Content Include="Scripts\highlightjs\styles\foundation.css" />
+    <Content Include="Scripts\highlightjs\styles\github-gist.css" />
+    <Content Include="Scripts\highlightjs\styles\github.css" />
+    <Content Include="Scripts\highlightjs\styles\googlecode.css" />
+    <Content Include="Scripts\highlightjs\styles\grayscale.css" />
+    <Content Include="Scripts\highlightjs\styles\idea.css" />
+    <Content Include="Scripts\highlightjs\styles\ir-black.css" />
+    <Content Include="Scripts\highlightjs\styles\kimbie.dark.css" />
+    <Content Include="Scripts\highlightjs\styles\kimbie.light.css" />
+    <Content Include="Scripts\highlightjs\styles\magula.css" />
+    <Content Include="Scripts\highlightjs\styles\mono-blue.css" />
+    <Content Include="Scripts\highlightjs\styles\monokai-sublime.css" />
+    <Content Include="Scripts\highlightjs\styles\monokai.css" />
+    <Content Include="Scripts\highlightjs\styles\obsidian.css" />
+    <Content Include="Scripts\highlightjs\styles\paraiso-dark.css" />
+    <Content Include="Scripts\highlightjs\styles\paraiso-light.css" />
+    <Content Include="Scripts\highlightjs\styles\railscasts.css" />
+    <Content Include="Scripts\highlightjs\styles\rainbow.css" />
+    <Content Include="Scripts\highlightjs\styles\solarized-dark.css" />
+    <Content Include="Scripts\highlightjs\styles\solarized-light.css" />
+    <Content Include="Scripts\highlightjs\styles\sunburst.css" />
+    <Content Include="Scripts\highlightjs\styles\twilight.css" />
+    <Content Include="Scripts\highlightjs\styles\vs.css" />
+    <Content Include="Scripts\highlightjs\styles\vs2015.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\highlightjs\styles\xcode.css" />
+    <Content Include="Scripts\highlightjs\styles\zenburn.css" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
+    <Content Include="Scripts\marked.min.js" />
+    <Content Include="Scripts\vue.js" />
+    <Content Include="Scripts\vue.min.js" />
+    <Content Include="SignalRHub.websurge" />
+    <Content Include="Scripts\jquery.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="index.htm" />
+    <Content Include="Scripts\ww.jquery.js" />
+    <Content Include="Scripts\ww.jquery.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChatHub\ChatHub.cs" />
+    <Compile Include="ChatHub\ChatMessage.cs" />
+    <Compile Include="ChatHub\ChatUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignalRHub.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="WebStoreNotificationHub\WebStoreNotificationHub.cs" />
+    <Compile Include="WebStoreNotificationHub\WebStoreOrderService.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

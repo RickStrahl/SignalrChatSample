@@ -1,0 +1,9 @@
+.connection-status {
+  color: khaki;
+  font-size: 0.8em;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.connection-status.warning {
+  color: lightcoral;
+}
