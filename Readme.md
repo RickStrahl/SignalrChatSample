@@ -11,27 +11,7 @@ http://signalrswf.west-wind.com/
 
 which you can use if you don't want to run the SignalR server locally. For the Web samples, change the signalR URL as part of the setup to point the above Url to use the online SignalR hub.
 
-No guarantees this will continue to run, but for a while this will be available.
-
-
-### Runnable FoxPro Sample
-You can find more information on the FoxPro bits here:
-
-* [White Paper](https://bitbucket.org/RickStrahl/swfox16_signalr/raw/master/Documents/Strahl_SignalR.docx)
-* [Slides](https://bitbucket.org/RickStrahl/swfox16_signalr/raw/master/Documents/Strahl_SignalR.pptx)
-
-You can download a fully self contained FoxPro sample of the Chat application from here:
-
-* [SignalR Runnable Sample App](https://bitbucket.org/RickStrahl/swfox16_signalr/raw/master/Build/SignalRSamples.zip)
-
-You can download this sample and run it against our test Signal Chat service.
-
-> #### Security 
-> In order to run this application you may have to Unblock the various DLL dependencies that ship with this example, as they are considered downloaded from the Internet. If you run the EXE and get a `Cannot load CLR Instance` error do the following:
->
-> * Right click the **each of .dll files** individually
-> * Open Properties
-> * Check the [x] Unblock option (or button pre-Win10)
+No guarantees this URL will continue to be available, but for a while this will be available.
 
 
 ### VueJs Sample
@@ -63,3 +43,24 @@ You can also run the sample online:
 * http://signalrswf.west-wind.com/AngularClient
 
 and you should be able to share connections with any others connected through the same hub.
+
+
+
+### Runnable FoxPro Sample
+You can find more information on the FoxPro bits here:
+
+* [White Paper](https://bitbucket.org/RickStrahl/swfox16_signalr/raw/master/Documents/Strahl_SignalR.docx)
+* [Slides](https://bitbucket.org/RickStrahl/swfox16_signalr/raw/master/Documents/Strahl_SignalR.pptx)
+
+You can download a fully self contained FoxPro sample of the Chat application from here:
+
+* [SignalR Runnable Sample App](https://bitbucket.org/RickStrahl/swfox16_signalr/raw/master/Build/SignalRSamples.zip)
+
+You can download this sample and run it against our test Signal Chat service.
+
+> #### Security 
+> In order to run this application you may have to Unblock the various DLL dependencies that ship with this example, as they are considered downloaded from the Internet. If you run the EXE and get a `Cannot load CLR Instance` error do the following:
+>
+> * Right click the **each of .dll files** individually
+> * Open Properties
+> * Check the [x] Unblock option (or button pre-Win10)
