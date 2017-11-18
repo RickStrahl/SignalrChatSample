@@ -11,7 +11,7 @@ http://signalrswf.west-wind.com/
 
 which you can use if you don't want to run the SignalR server locally. For the Web samples, change the signalR URL as part of the setup to point the above Url to use the online SignalR hub.
 
-No guarantees this URL will continue to be available, but for a while this will be available.
+No guarantees this URL will continue to be available, but for a while this will be up.
 
 
 ### VueJs Sample
